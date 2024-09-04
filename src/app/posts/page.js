@@ -7,9 +7,7 @@ const fetcher = async () => {
   return await response.json();
 };
 const Posts = () => {
-const { data: posts, error, isLoading } = useSWR("/posts", fetcher {
-    revalidateIfStale: true;
-});
+const { data: posts, error, isLoading } = useSWR("/posts", fetcher );
 
 
   if (isLoading) return <div>Loading...</div>;
