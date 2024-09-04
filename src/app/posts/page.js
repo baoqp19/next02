@@ -1,14 +1,14 @@
 "use client";
-const postAPI = `https://jsonplaceholder.typicode.com/posts`;
+export const postAPI = `http://localhost:3005/posts`;
 import useSWR from "swr";
+import PostForm from "./PostForm";
 
-const fetcher = async () => {
-  const response = await fetch(postAPI);
+const fetcher = async (url) => {
+  const response = await fetch(url);
   return await response.json();
 };
 const Posts = () => {
-const { data: posts, error, isLoading } = useSWR("/posts", fetcher );
-
+  const { data: posts, error, isLoading } = useSWR(postAPI, fetcher);
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>đã xẩy ra lỗi</div>;
@@ -19,6 +19,7 @@ const { data: posts, error, isLoading } = useSWR("/posts", fetcher );
       {posts.map(({ id, title }) => (
         <h3 key={id}>{title}</h3>
       ))}
+      <PostForm />
     </div>
   );
 };

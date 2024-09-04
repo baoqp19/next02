@@ -1,19 +1,19 @@
 {
   "todos": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Hoc Next"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Hoc React"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Hoc C++"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Hoc Java"
     },
     {
@@ -23,6 +23,24 @@
     {
       "id": "6167",
       "name": "Hoc C#"
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "title": "Post 1"
+    },
+    {
+      "id": "2",
+      "title": "Post 2"
+    },
+    {
+      "id": "ba55",
+      "title": "post 3"
+    },
+    {
+      "id": "1af8",
+      "title": "posht 3"
     }
   ]
 }
