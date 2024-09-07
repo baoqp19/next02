@@ -12,7 +12,7 @@ const addPost = async (data) => {
   });
   return response;
 };
-const PostForm = () => {
+const PostForm = ({ mutate }) => {
   const [title, setTitle] = useState("");
 
   const handleSubmit = async (e) => {
@@ -20,7 +20,8 @@ const PostForm = () => {
     const response = await addPost({ title });
 
     if (response.ok) {
-      mutate(postAPI);   // khi thêm 1 cái vào DOM Thì refresh lại API
+      // mutate(postAPI);   // khi thêm 1 cái vào DOM Thì refresh lại API
+      mutate();
       setTitle("");
     }
   };
@@ -34,7 +35,7 @@ const PostForm = () => {
         name="title"
         placeholder="Tiêu đề..."
         onChange={handleChange}
-        value={title}   // để khi setTitle rỗng thì có thể eat
+        value={title} // để khi setTitle rỗng thì có thể eat
       />
       <button>Thêm</button>
     </form>
